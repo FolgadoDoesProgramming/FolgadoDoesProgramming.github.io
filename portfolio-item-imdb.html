@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <title>João Folgado Portfolio Website</title>
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+          integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+
+
+
+<body>
+    <header>
+        <a href="index.html" class="nav__link__logo">
+            <div class="logo">
+                <p class="header__logo" ><strong>&lt;FolgadoDoesProgramming&gt;</strong></p>
+
+            </div>
+        </a>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list"> <!-- duplo"__" indica que list faz parte do nav -->
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">  <!-- class para styling e id's para anchoring -->
+        <h1 class="section__title section__title--intro"> <!-- duplo"--" indica que vai modificar o section__tittle-->
+            <strong> Classificação</strong> de críticas IMDB
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Classificação de críticas de filmes utilizando redes neuronais</p>
+        <img src="images/imdb.png" alt="" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <p>Este projeto lida com textos de críticas de cinema do IMDB e está dividido
+            em duas tarefas de classificação. Baseado nos textos dos documentos o objetivo é:</p>
+        <p>Realizar uma classificação binária, determinando se uma críticas é positiva ou negativa.</p>
+        <p>Realizar uma classificação multiclasse nas quais as criticas são
+            compostas pelas pontuações de 1-4 e 7-10.</p>
+
+        <p>A primeira etapa a realizar foi a limpeza dos textos imdb dado que estes têm caracteres supérfluos de modo a
+        obtermos textos apenas compostos por palavras, excluindo acentuação, virgulas, barras etc.</p>
+        <img src="images/cleaning text.png" class="portfolio-item-imdb__img" alt="">
+        <p>Após a limpeza dos documentos o próximo passo a realizar foi a aplicação de um stemmer, este tem como objetivo o
+            agrupamento de palavras semelhantes com o objetivo de reduzir a dimensão do vocabulário.</p>
+
+        <p>Como podemos observar pelas imagens seguintes todas as palavras presentes na primeira figura
+            ficaram agrupadas na palavra ‘abus’, a que neste caso, não é uma ‘palavra real’ mas que, na nossa rede,
+            tem o significado de todas as palavras presentes na primeira figura.</p>
+
+        <img src="images/palavras antes.png" class="portfolio-item-imdb__img-wordsbig" alt="">
+        <p></p>
+        <img src="images/palavras depois.png" class="portfolio-item-imdb__img-words" alt="">
+
+        <p>Isto resulta num vocabulário com tamanho menor o que irá reduzir a complexidade computacional deste programa.</p>
+
+        <p>A seguinte etapa foi a construção do vocabulário tentando maximizar a taxa de acerto bem como reduzir ao máximo
+            o numero de palavras deste vocabulário de modo a reduzir ao máximo a complexidade computacional deste programa.</p>
+
+        <img src="images/voc size.png" class="portfolio-item-imdb__img-graphs" alt="">
+
+        <p>Olhando para os gráficos anteriormente apresentados rapidamente concluímos que um vocabulário
+            de 350 palavras apresenta a melhor relação tamanho-taxa de acerto.</p>
+        <p>Após termos decididos quais os parâmetros ótimos para a construção do vocabulário fomos
+            agora ajustar os parâmetros do Discriminante Logístico de modo a obter o melhor
+            desempenho, tendo sempre em conta o score (taxa de acerto) e o tamanho do vocabulário
+            (que neste caso não seria exatamente o tamanho do vocabulário, mas sim a quantidade de dimensões “importantes”).</p>
+
+        <figure>
+            <img src="images/discrim log.png" class="portfolio-item-imdb__img-graphs" alt="">
+            <figcaption class="portfolio-item-imdb__figcaption">Discriminante logistico na classificação binária</figcaption>
+        </figure>
+        <figure>
+            <img src="images/disc log bin.png" class="portfolio-item-imdb__img-graphs" alt="">
+            <figcaption class="portfolio-item-imdb__figcaption">Discriminante logistico na classificação multiclasse</figcaption>
+        </figure>
+        <p></p>
+        <p>Pela analise dos gráficos facilmente se conclui que os valores ideias seriam regularização do
+        tipo ‘l1’ ou lasso para descartar dimensões supérfluas e valor de regularização ou C a 0.5,
+        valores que, apesar de não oferecem o melhor resultado, são valores mais seguros em relação a
+            evitar a sobre aprendizagem e reduzir o poder computacional necessário.</p>
+
+        <p><strong>Resultado:</strong></p>
+        <p>Podemos observar pela figura anterior que, com os parâmetros ideais conseguimos alcançar uma taxa de acerto
+            superior a <strong>85%</strong> na classificação binária e uma taxa de acerto superior a <strong>41%</strong> na classificação mutilasse.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:filipefolgado98@gmail.com" class="footer__link">filipefolgado98@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/joaosemfolga/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/FolgadoDoesProgramming">
+                    <i class="fab fa-github-square"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://twitter.com">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
