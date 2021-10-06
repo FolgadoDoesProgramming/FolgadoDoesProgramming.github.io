@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <title>João Folgado Portfolio Website</title>
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+          integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+
+
+
+<body>
+    <header>
+        <a href="index.html" class="nav__link__logo">
+            <div class="logo">
+                <p class="header__logo" ><strong>&lt;FolgadoDoesProgramming&gt;</strong></p>
+
+            </div>
+        </a>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list"> <!-- duplo"__" indica que list faz parte do nav -->
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">  <!-- class para styling e id's para anchoring -->
+        <h1 class="section__title section__title--intro"> <!-- duplo"--" indica que vai modificar o section__tittle-->
+            Classificação de moedas utilizando <strong> Processamento de Imagem</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Deteção e classificação de moedas</p>
+        <img src="images/imageprocessing.jpg" alt="" class="intro__img">
+
+    </section>
+
+    <div class="portfolio-item-individual">
+        <p>O objetivo deste projeto era a realização de um programa que conseguisse, num conjunto de fotos com condições
+            especificas, câmara paralela à mesa, distancia sempre igual entre outros, detetar, de todos os objetos em cima da mesa,
+            aqueles que eram moedas, bem como classificar o seu valor de cêntimos.</p>
+        <p>A primeira figura demonstra a imagem que o programa irá tentar detetar e classificar as moedas.</p>
+        <img src="images/moedas1.jpg" alt="" class="portfolio-item__img">
+
+        <p>Para atingir tal objetivo foi realizado um processo que se divide em várias etapas, a primeiro Aquisição e pré-processamento
+            das imagens onde se tratou de remover informação supérflua, neste caso foi encontrar o valor Hue, no modelo HSV, dá cor de fundo
+            para se remover esta das máscaras a realizar na segunda fase.</p>
+        <p>A segunda fase, segmentação, tem como função a criação de máscaras binárias para isolar os objetos presentes em cima da mesa.</p>
+        <p> A figura seguinte é uma máscara binária da fotografia onde a preto está o valor hue do azul da mesa,
+            o qual foi removido na criação destas máscaras.</p>
+        <img src="images/moedas2.png" alt="" class="portfolio-item__img">
+        <p>A terceira fase foi a extração de características, esta tem por objetivo extrair características referentes á cor dos
+            objetos em cima da mesa, bem como características referentes à forma ou shape de cada um desses objetos.</p>
+        <p>A fase final é a classificação das moedas, para todos os objetos que, pela fase anterior, demonstram características
+            de serem uma moeda, estes agora foram classificados com os seus respetivos valores.</p>
+        <p><strong>Resultados:</strong></p>
+        <img src="images/moedas3.png" alt="" class="portfolio-item__img">
+        <p></p>
+        <img src="images/todasmoedas.png" alt="" class="portfolio-item__img">
+
+        <p>Como podemos observar pelas figuras anteriores o programa conseguiu classificar todas as moedas corretamente e
+            evitar classificar objetos que não eram moedas.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:filipefolgado98@gmail.com" class="footer__link">filipefolgado98@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://codepen.io">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="http://dribbble.com">
+                    <i class="fab fa-github-square"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://twitter.com">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

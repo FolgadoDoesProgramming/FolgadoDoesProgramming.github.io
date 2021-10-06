@@ -133,10 +133,14 @@ header{
 }
 .logo {
     max-width: 500px;
+    background: var(--clr-dark);
+    color: var(--clr-light)
 }
 
 .header__logo{
     margin-top: 0;
+    margin-left: .75em;
+    margin-right: .75em;
     font-family: var(--ff-secondary);
 }
 
@@ -174,6 +178,16 @@ header{
 .nav__link:hover {
     color: var(--clr-accent);
 }
+.nav__link__logo {
+    color: inherit;
+    text-decoration: none;
+}
+.nav__link__logo:focus {
+    outline: none;
+}
+
+
+
 .nav-toggle {
     padding: .5em;
     background: transparent;
@@ -447,4 +461,37 @@ header{
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.portfolio-item__img{
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 350px;
+}
+/*     motion detetion */
+.portfolio-item-video__img{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.portfolio-item__video{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+    width: 50%;
+    height: 15%;
+}
+
+@media ( max-width: 600px){
+    .portfolio-item-video__img {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .portfolio-item__video{
+        width: 100%;
+        height: 30%;
+    }
 }
