@@ -522,8 +522,21 @@ header{
 
 }
 
-.portfolio-item-imdb__figcaption {
+.portfolio-item__figcaption {
     text-align: center;
     font-family: var(--ff-secondary);
     font-size: .75em;
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+.portfolio-item-speedy__img{
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    text-align: center;
 }

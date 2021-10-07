@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <title>João Folgado Portfolio Website</title>
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+          integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+
+
+
+<body>
+    <header>
+        <a href="index.html" class="nav__link__logo">
+            <div class="logo">
+                <p class="header__logo" ><strong>&lt;FolgadoDoesProgramming&gt;</strong></p>
+
+            </div>
+        </a>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list"> <!-- duplo"__" indica que list faz parte do nav -->
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">  <!-- class para styling e id's para anchoring -->
+        <h1 class="section__title section__title--intro"> <!-- duplo"--" indica que vai modificar o section__tittle-->
+            Android application<strong> Speedy Manager</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Aplicação para criação e gestão de tarefas</p>
+        <img src="images/speedymanager.jpg" alt="" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <p>Nos dias de hoje todas as pessoas têm inúmeras tarefas por fazer, sejam estas de
+            carácter pessoal ou profissional. Com tantas tarefas e encargos por fazer é necessário
+            uma maneira de as conseguir gerir de uma maneira prática e eficiente.
+            Para corresponder a essa necessidade surge o Speedy Manager.</p>
+        <p>O Speedy Manager é uma aplicação android que permite a organização de tarefas e listas de tarefas.
+            Esta lista de tarefas pode ser partilhada e manipulada por vários utilizador em simultâneo.</p>
+
+        <p>A aplicação foi construída em Kotlin, uma linguagem de programação multi plataforma com interoperabilidade
+            total com Java, e que é referência no desenvolvimento de aplicações móveis.
+            Além do Kotlin a aplicação integra o sistema de Firebase da google que permite que os utilizadores utilizem
+            a sua conta google na aplicação e ainda, este sistema, dispõe ao programador de ferramentas tais como
+            armazenamento em cloud, base de dados em tempo real, autenticação de utilizadores, entre outros. </p>
+
+        <p>Em seguida irão algumas imagens a demonstrar a interface gráfica da aplicação, bem como um video a demonstrar
+        o seu funcionamento</p>
+        <p><strong>Imagens:</strong></p>
+        <figure>
+            <div class="row">
+                <img src="images/first screen.jpeg" alt="" class="portfolio-item-speedy__img">
+                <img src="images/registo.jpeg" alt="" class="portfolio-item-speedy__img">
+                <img src="images/login.jpeg" alt="" class="portfolio-item-speedy__img">
+            </div>
+            <figcaption class="portfolio-item__figcaption">Ecrãs de Registo e Log in</figcaption>
+        </figure>
+        <p></p>
+        <figure>
+            <div class="row">
+                <img src="images/ecra inicial.jpeg" alt="" class="portfolio-item-speedy__img">
+                <img src="images/listas.jpeg" alt="" class="portfolio-item-speedy__img">
+                <img src="images/ecrã listas.jpeg" alt="" class="portfolio-item-speedy__img">
+                <img src="images/chat.jpeg" alt="" class="portfolio-item-speedy__img">
+            </div>
+        <figcaption class="portfolio-item__figcaption">Ecrãs principais da aplicação</figcaption>
+        </figure>
+        <p><strong>Video:</strong></p>
+        <video width="320" height="240" controls class="portfolio-item__video">
+            <source src="videos/videoo.mp4" type="video/mp4" >
+        </video>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:filipefolgado98@gmail.com" class="footer__link">filipefolgado98@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/joaosemfolga/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/FolgadoDoesProgramming">
+                    <i class="fab fa-github-square"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://twitter.com">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
