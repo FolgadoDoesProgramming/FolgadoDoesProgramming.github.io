@@ -196,6 +196,7 @@ header{
     position: fixed;
     right: 1em;
     top: 1em;
+    padding: 0.75em;
     z-index: 1000;
 }
 .nav-open .nav{
