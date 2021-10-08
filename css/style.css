@@ -190,7 +190,7 @@ header{
 
 .nav-toggle {
     padding: .5em;
-    background: transparent;
+    background: var(--clr-dark);
     border: 0;
     cursor: pointer;
     position: fixed;
